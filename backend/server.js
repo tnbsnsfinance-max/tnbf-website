@@ -275,13 +275,16 @@ app.post("/api/quick-lead", async (req, res) => {
 // START SERVER
 // ============================================
 
-app.listen(PORT, () => {
-    console.log(`✅ TNBF Email Server running on port ${PORT}`);
-    console.log(
-        `📧 Email configured for: ${
-            process.env.EMAIL_USER || "tnbsns.finance@gmail.com"
-        }`,
-    );
-});
+// Only run the server if this file is executed directly (not when imported)
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`✅ TNBF Email Server running on port ${PORT}`);
+        console.log(
+            `📧 Email configured for: ${
+                process.env.EMAIL_USER || "tnbsns.finance@gmail.com"
+            }`,
+        );
+    });
+}
 
 module.exports = app;
