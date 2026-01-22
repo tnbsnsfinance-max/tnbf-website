@@ -9,6 +9,34 @@
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api" }
   ],
+  "redirects": [
+    { "source": "/pages/home", "destination": "/", "permanent": true },
+    { "source": "/pages/home/index.html", "destination": "/", "permanent": true },
+    { "source": "/pages/about", "destination": "/about", "permanent": true },
+    { "source": "/pages/about/index.html", "destination": "/about", "permanent": true },
+    { "source": "/pages/loans", "destination": "/loans", "permanent": true },
+    { "source": "/pages/loans/index.html", "destination": "/loans", "permanent": true },
+    { "source": "/pages/eligibility", "destination": "/eligibility", "permanent": true },
+    { "source": "/pages/eligibility/index.html", "destination": "/eligibility", "permanent": true },
+    { "source": "/pages/industries", "destination": "/industries", "permanent": true },
+    { "source": "/pages/industries/index.html", "destination": "/industries", "permanent": true },
+    { "source": "/pages/testimonials", "destination": "/testimonials", "permanent": true },
+    { "source": "/pages/testimonials/index.html", "destination": "/testimonials", "permanent": true },
+    { "source": "/pages/contact-apply", "destination": "/apply-now", "permanent": true },
+    { "source": "/pages/contact-apply/index.html", "destination": "/apply-now", "permanent": true },
+    { "source": "/pages/emi-calculator", "destination": "/emi-calculator", "permanent": true },
+    { "source": "/pages/emi-calculator/index.html", "destination": "/emi-calculator", "permanent": true },
+    { "source": "/pages/faq", "destination": "/faq", "permanent": true },
+    { "source": "/pages/faq/index.html", "destination": "/faq", "permanent": true },
+    { "source": "/pages/privacy-policy", "destination": "/privacy-policy", "permanent": true },
+    { "source": "/pages/privacy-policy/index.html", "destination": "/privacy-policy", "permanent": true },
+    { "source": "/pages/terms-conditions", "destination": "/terms-conditions", "permanent": true },
+    { "source": "/pages/terms-conditions/index.html", "destination": "/terms-conditions", "permanent": true },
+    { "source": "/pages/refund-policy", "destination": "/refund-policy", "permanent": true },
+    { "source": "/pages/refund-policy/index.html", "destination": "/refund-policy", "permanent": true },
+    { "source": "/pages/blog", "destination": "/blog", "permanent": true },
+    { "source": "/pages/blog/index.html", "destination": "/blog", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",

@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://tnbf.in/sitemap.xml
+Sitemap: https://tnbsnsfinance.com/sitemap.xml
 
 # Crawl delay
 Crawl-delay: 10
@@ -11,7 +11,6 @@ Crawl-delay: 10
 Disallow: /admin/
 Disallow: /private/
 
-# Allow important pages
-Allow: /pages/
+# Allow important paths
 Allow: /blog/
 Allow: /assets/

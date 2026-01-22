@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, '../')));
 
 // Serve the home page on root request
 app.get('/', (req, res) => {
-    res.redirect('/pages/home/index.html');
+    res.sendFile(path.join(__dirname, "..", "pages", "home", "index.html"));
 });
 
 // ============================================

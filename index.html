@@ -16,9 +16,11 @@
         <div id="root">
             <!-- Main content will be loaded here -->
             <script>
-                // Redirect to home page
-                window.location.href =
-                    "./pages/home/index.html";
+                if (window.location.protocol === "file:") {
+                    window.location.href = "./pages/home/index.html";
+                } else {
+                    window.location.href = "/";
+                }
             </script>
         </div>
     </body>
