@@ -1,0 +1,44 @@
+{
+    "@context": "https://schema.org",
+    "@type": "FinancialService",
+    "name": "TNBF(Tamil Nadu Business Finance)",
+    "description": "Fast business loans with 24-48 hour approval for businesses with ₹15 Lakhs+ monthly transactions",
+    "url": "https://www.tnbf.com",
+    "logo": "https://www.tnbf.com/assets/images/logo.png",
+    "image": "https://www.tnbf.com/assets/images/hero/main-hero.jpg",
+    "priceRange": "₹₹₹",
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Chennai",
+        "addressRegion": "Tamil Nadu",
+        "addressCountry": "IN"
+    },
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "13.0827",
+        "longitude": "80.2707"
+    },
+    "areaServed": {
+        "@type": "State",
+        "name": "Tamil Nadu"
+    },
+    "serviceType": [
+        "Business Loans",
+        "Working Capital Loans",
+        "MSME Financing"
+    ],
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Business Loan Products",
+        "itemListElement": [
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "LoanOrCredit",
+                    "name": "Business Loan",
+                    "description": "Fast business loans with 24-48 hour approval"
+                }
+            }
+        ]
+    }
+}

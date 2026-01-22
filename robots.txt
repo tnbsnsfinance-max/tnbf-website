@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://tnbf.in/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 10
+
+# Disallow admin and private directories (if any in future)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow important pages
+Allow: /pages/
+Allow: /blog/
+Allow: /assets/

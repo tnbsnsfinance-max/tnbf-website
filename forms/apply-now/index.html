@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Apply for Business Loan - TNBF(Tamil Nadu Business Finance)</title>
+        <link rel="stylesheet" href="../../assets/css/styles.css">
+        <!-- Google Analytics 4 -->
+    <script src="../../assets/js/google-analytics.js"></script>
+</head>
+    <body>
+        <div class="form-container">
+            <h1>Apply for Business Loan</h1>
+            <form
+                id="apply-form"
+                action="https://formsubmit.co/tnbsns.finance@gmail.com"
+                method="POST"
+            >
+                <div class="form-group">
+                    <label for="business-name">Business Name *</label>
+                    <input
+                        type="text"
+                        id="business-name"
+                        name="business-name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-name">Contact Person Name *</label>
+                    <input
+                        type="text"
+                        id="contact-name"
+                        name="contact-name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="monthly-transaction"
+                    >Monthly Transaction Amount (₹) *</label>
+                    <input
+                        type="number"
+                        id="monthly-transaction"
+                        name="monthly-transaction"
+                        min="1500000"
+                        required
+                    >
+                    <small>Minimum ₹15 Lakhs required</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="loan-amount">Loan Amount Required (₹) *</label>
+                    <input
+                        type="number"
+                        id="loan-amount"
+                        name="loan-amount"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="industry">Industry/Business Type *</label>
+                    <select id="industry" name="industry" required>
+                        <option value="">Select Industry</option>
+                        <option value="manufacturing">Manufacturing</option>
+                        <option value="retail">Retail</option>
+                        <option value="services">Services</option>
+                        <option value="trading">Trading</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Additional Information</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    Submit Application
+                </button>
+            </form>
+        </div>
+
+        <script src="../../assets/js/form-handler.js"></script>
+    </body>
+</html>

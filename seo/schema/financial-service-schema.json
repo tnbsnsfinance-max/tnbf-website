@@ -1,0 +1,68 @@
+{
+    "@context": "https://schema.org",
+    "@type": "FinancialProduct",
+    "name": "TNBF(Tamil Nadu Business Finance) Business Loan",
+    "description": "Cheque-based business loans from ₹5 Lakhs to ₹10 Crores with 24-48 hour approval. No collateral required. Interest starting from 1.5% per month.",
+    "url": "https://www.tnbf.com/pages/loans/index.html",
+    "provider": {
+        "@type": "FinancialService",
+        "name": "TNBF(Tamil Nadu Business Finance)",
+        "url": "https://www.tnbf.com",
+        "logo": "https://www.tnbf.com/assets/images/logo.png",
+        "telephone": "+91-9876543210",
+        "email": "tnbsns.finance@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Chennai",
+            "addressRegion": "Tamil Nadu",
+            "addressCountry": "IN"
+        },
+        "areaServed": [
+            {
+                "@type": "State",
+                "name": "Tamil Nadu"
+            },
+            {
+                "@type": "City",
+                "name": "Bangalore"
+            }
+        ],
+        "serviceType": [
+            "Business Loan",
+            "Working Capital Loan",
+            "Short-Term Business Loan",
+            "Cheque-Based Financing"
+        ]
+    },
+    "category": "Business Loan",
+    "offers": {
+        "@type": "Offer",
+        "price": "500000",
+        "priceCurrency": "INR",
+        "priceSpecification": {
+            "@type": "PriceSpecification",
+            "minPrice": "500000",
+            "maxPrice": "100000000",
+            "priceCurrency": "INR"
+        },
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2026-01-01"
+    },
+    "feesAndCommissionsSpecification": "Interest starting from 1.5% per month. No hidden charges. Processing fee as applicable.",
+    "annualPercentageRate": "18.0",
+    "loanTerm": {
+        "@type": "QuantitativeValue",
+        "minValue": 4,
+        "maxValue": 15,
+        "unitCode": "MON"
+    },
+    "loanType": "Business Loan",
+    "requiredCollateral": "Cheques (No gold or property collateral required)",
+    "eligibilityCriteria": "Minimum ₹15 Lakhs monthly business transactions, Active business with GST registration, Business current account, Valid KYC documents",
+    "applicationDeadline": "Rolling basis - Applications accepted continuously",
+    "processingTime": "24-48 hours",
+    "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Business Owners across Tamil Nadu and Bangalore"
+    }
+}

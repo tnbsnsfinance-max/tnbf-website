@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="noindex, nofollow">
+        <title>Thank You - TNBF(Tamil Nadu Business Finance)</title>
+        <link rel="icon" type="image/png" href="../../assets/images/logo.png">
+        <link rel="stylesheet" href="../../assets/css/styles.css">
+        <style>
+            .thank-you-container {
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 2rem;
+                background: var(--background-light);
+            }
+            .success-icon {
+                font-size: 5rem;
+                color: #22c55e;
+                margin-bottom: 1rem;
+                animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            }
+            @keyframes bounceIn {
+                0% { transform: scale(0); opacity: 0; }
+                60% { transform: scale(1.1); }
+                100% { transform: scale(1); opacity: 1; }
+            }
+        </style>
+        <script>
+            // Auto-redirect to home after 5 seconds
+            setTimeout(function() {
+                window.location.href = '../home/index.html';
+            }, 5000);
+        </script>
+        <!-- Google Analytics 4 -->
+    <script src="../assets/js/google-analytics.js"></script>
+</head>
+    <body>
+        <div class="thank-you-container">
+            <div class="success-icon">✅</div>
+            <h1 style="color: var(--primary-color); margin-bottom: 1rem;">Application Submitted Successfully!</h1>
+            <p style="font-size: 1.25rem; color: var(--text-secondary); max-width: 600px; margin-bottom: 2rem;">
+                Thank you for choosing TNBF(Tamil Nadu Business Finance). We have received your details and our team will get back to you within 24 hours.
+            </p>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+                Redirecting you to the home page in <span id="countdown">5</span> seconds...
+            </p>
+            <a href="home/index.html" class="btn btn-primary">Return to Home Now</a>
+        </div>
+
+        <script>
+            // Countdown timer
+            let seconds = 5;
+            const countdownElement = document.getElementById('countdown');
+            const timer = setInterval(() => {
+                seconds--;
+                countdownElement.textContent = seconds;
+                if (seconds <= 0) clearInterval(timer);
+            }, 1000);
+        </script>
+        <script src="../assets/js/chatbot.js"></script>
+    </body>
+</html>

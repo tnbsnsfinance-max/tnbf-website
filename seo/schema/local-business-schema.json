@@ -1,0 +1,74 @@
+{
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "TNBF(Tamil Nadu Business Finance)",
+    "alternateName": "TNBF(Tamil Nadu Business Finance)",
+    "description": "Fast business loans from ₹5 Lakhs to ₹10 Crores with 24-48 hour approval. Cheque-based financing with no collateral required for businesses in Tamil Nadu and Bangalore.",
+    "url": "https://www.tnbf.com",
+    "logo": "https://www.tnbf.com/assets/images/logo.png",
+    "image": "https://www.tnbf.com/assets/images/hero/hero-business.png",
+    "telephone": "+91-9876543210",
+    "email": "tnbsns.finance@gmail.com",
+    "priceRange": "₹₹₹",
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Chennai",
+        "addressRegion": "Tamil Nadu",
+        "addressCountry": "IN"
+    },
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 13.0827,
+        "longitude": 80.2707
+    },
+    "areaServed": [
+        {
+            "@type": "State",
+            "name": "Tamil Nadu"
+        },
+        {
+            "@type": "City",
+            "name": "Bangalore"
+        },
+        {
+            "@type": "City",
+            "name": "Chennai"
+        },
+        {
+            "@type": "City",
+            "name": "Coimbatore"
+        },
+        {
+            "@type": "City",
+            "name": "Madurai"
+        },
+        {
+            "@type": "City",
+            "name": "Salem"
+        }
+    ],
+    "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+    },
+    "sameAs": [
+        "https://www.instagram.com/tnbf",
+        "https://www.youtube.com/@tnbf"
+    ],
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "500",
+        "bestRating": "5",
+        "worstRating": "1"
+    }
+}
