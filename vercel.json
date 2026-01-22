@@ -3,6 +3,9 @@
   "public": true,
   "cleanUrls": true,
   "trailingSlash": false,
+  "installCommand": "npm ci",
+  "buildCommand": "npm run build",
+  "outputDirectory": "public",
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api" }
   ],
