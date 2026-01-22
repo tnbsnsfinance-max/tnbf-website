@@ -4,7 +4,7 @@
   "description": "TNBF Business Loan Website",
   "main": "api/index.js",
   "scripts": {
-    "build": "node -e \"console.log('No build step: static site + serverless API')\"",
+    "build": "node -e \"const fs=require('fs'); const path=require('path'); const root=process.cwd(); const out=path.join(root,'public'); fs.rmSync(out,{recursive:true,force:true}); fs.mkdirSync(out,{recursive:true}); const copy=(p)=>{const src=path.join(root,p); if(!fs.existsSync(src)) return; fs.cpSync(src,path.join(out,p),{recursive:true});}; ['assets','pages','forms','blog','seo'].forEach(copy); ['index.html','robots.txt','sitemap.xml'].forEach(copy); console.log('Built static output to', out);\"",
     "start": "node backend/server.js",
     "dev": "nodemon backend/server.js"
   },
