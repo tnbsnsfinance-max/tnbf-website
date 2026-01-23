@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (window.location.protocol === "file:") {
                 e.preventDefault();
                 alert(
-                    "❌ Form Submission Error:\n\nFormSubmit.co (the email service) does not work when opening HTML files directly from your computer (file://).\n\nTo test the form, you must either:\n1. Open this project through a Web Server (e.g., VS Code 'Live Server').\n2. Upload the website to your hosting or GitHub Pages.\n\nOnce hosted, the form will work perfectly!",
+                    "❌ Form Submission Error:\n\nForms cannot submit when opening HTML files directly from your computer (file://).\n\nTo test the form, you must open this project through a Web Server (e.g., VS Code 'Live Server') or deploy it.",
                 );
                 return false;
             }
@@ -23,6 +23,53 @@ document.addEventListener("DOMContentLoaded", function () {
                 e.preventDefault();
                 alert("Monthly transaction amount must be at least ₹15 Lakhs");
                 return;
+            }
+
+            const actionUrl = new URL(applyForm.getAttribute("action") || "", window.location.href);
+            if (actionUrl.origin === window.location.origin && actionUrl.pathname.startsWith("/api/")) {
+                e.preventDefault();
+
+                const submitButton = applyForm.querySelector('button[type="submit"], input[type="submit"]');
+                const originalLabel = submitButton
+                    ? (submitButton.tagName === "INPUT" ? submitButton.value : submitButton.textContent)
+                    : "";
+                if (submitButton) {
+                    submitButton.disabled = true;
+                    if (submitButton.tagName === "INPUT") submitButton.value = "Submitting...";
+                    if (submitButton.tagName === "BUTTON") submitButton.textContent = "Submitting...";
+                }
+
+                const body = new URLSearchParams();
+                for (const [key, value] of formData.entries()) {
+                    body.append(key, String(value));
+                }
+
+                fetch(actionUrl.toString(), {
+                    method: "POST",
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: body.toString(),
+                })
+                    .then(async (resp) => {
+                        if (!resp.ok) {
+                            let msg = "Submission failed. Please try again.";
+                            try {
+                                const data = await resp.json();
+                                if (data && data.error) msg = data.error;
+                            } catch {}
+                            throw new Error(msg);
+                        }
+                        window.location.href = "/thanks.html";
+                    })
+                    .catch((err) => {
+                        alert(err && err.message ? err.message : "Submission failed. Please try again.");
+                    })
+                    .finally(() => {
+                        if (submitButton) {
+                            submitButton.disabled = false;
+                            if (submitButton.tagName === "INPUT") submitButton.value = originalLabel;
+                            if (submitButton.tagName === "BUTTON") submitButton.textContent = originalLabel;
+                        }
+                    });
             }
         });
     }

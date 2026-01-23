@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta
+            name="description"
+            content="Browse TNBF keyword blogs from recent searches. Find quick guides on private finance, cheque-based loans, business funding, and related loan topics."
+        >
+        <title>Keyword Blogs - TNBF(Tamil Nadu Business Finance)</title>
+        <link rel="stylesheet" href="../../assets/css/styles.css">
+        <script src="../../assets/js/google-analytics.js"></script>
+    </head>
+    <body>
+        <header>
+            <nav class="container">
+                <div class="logo">
+                    <img
+                        src="../../assets/images/logo.png"
+                        alt="TNBF(Tamil Nadu Business Finance)"
+                        style="height: 60px; width: auto"
+                    >
+                </div>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/loans">Loans</a></li>
+                    <li><a href="/eligibility">Eligibility</a></li>
+                    <li><a href="/industries">Industries</a></li>
+                    <li><a href="/testimonials">Testimonials</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li>
+                        <a
+                            href="/apply-now"
+                            class="btn btn-primary"
+                            style="padding: 0.5rem 1.5rem"
+                        >Apply Now</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="hero" style="padding: var(--spacing-xl) 0">
+            <div class="hero-content container">
+                <h1>Keyword Blogs</h1>
+                <p>
+                    Recent-search keyword topics (Tamil &amp; English)
+                </p>
+            </div>
+        </section>
+
+        <main>
+            <section style="padding: var(--spacing-2xl) 0">
+                <div class="container">
+                    <div class="grid grid-2" style="gap: var(--spacing-xl); align-items: start">
+                        <div class="card">
+                            <h2 style="margin-bottom: 0.75rem">Find a topic</h2>
+                            <p style="color: var(--text-secondary); margin-bottom: 1rem">
+                                Type to search and open a loan-related keyword blog.
+                            </p>
+                            <input
+                                id="keyword-search"
+                                type="text"
+                                placeholder="Search keywords…"
+                                style="width: 100%; padding: 0.85rem 1rem; border: 1px solid #e2e8f0; border-radius: 12px; outline: none"
+                            >
+                            <div style="margin-top: 0.9rem; display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; flex-wrap: wrap">
+                                <div style="color: var(--text-secondary); font-size: 0.95rem">
+                                    <span id="keyword-count">0</span> topics
+                                </div>
+                                <label style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--text-secondary); font-size: 0.95rem; user-select: none">
+                                    <input id="show-all-keywords" type="checkbox" style="accent-color: var(--primary-color)">
+                                    Show all keywords
+                                </label>
+                            </div>
+
+                            <div
+                                id="keyword-list"
+                                style="margin-top: 1rem; max-height: 520px; overflow: auto; border-top: 1px solid #e2e8f0; padding-top: 1rem"
+                            ></div>
+                        </div>
+
+                        <article class="card" id="keyword-article" style="min-height: 620px">
+                            <p style="color: var(--text-secondary); margin: 0">
+                                Select a keyword to view the blog.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <img
+                            src="../../assets/images/logo.png"
+                            alt="TNBF(Tamil Nadu Business Finance) Logo"
+                            style="height: 50px; margin-bottom: 1rem"
+                        >
+                        <p>
+                            Tamil Nadu Business Finance - Your trusted partner
+                            for fast business loans with transparent processes
+                            and quick approvals.
+                        </p>
+                    </div>
+
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <a href="/about">About Us</a><br>
+                        <a href="/loans">Loan Products</a><br>
+                        <a href="/eligibility">Eligibility</a><br>
+                        <a href="/industries">Industries</a><br>
+                        <a href="/privacy-policy">Privacy Policy</a>
+                    </div>
+
+                    <div class="footer-section">
+                        <h3>Contact Info</h3>
+                        <p style="margin-bottom: 0.8rem">
+                            📧 <a
+                                href="mailto:tnbsns.finance@gmail.com"
+                                style="display: inline; color: inherit"
+                            >tnbsns.finance@gmail.com</a>
+                        </p>
+                        <p style="margin-bottom: 0.5rem">
+                            📞 <a
+                                href="tel:+917892760436"
+                                style="display: inline; color: inherit"
+                            >+91 78927 60436</a>
+                        </p>
+                        <p style="margin-bottom: 0.5rem">
+                            📞 <a
+                                href="tel:+919513677677"
+                                style="display: inline; color: inherit"
+                            >+91 95136 77677</a>
+                        </p>
+                        <p style="margin-bottom: 0.5rem">
+                            📞 <a
+                                href="tel:+919513446257"
+                                style="display: inline; color: inherit"
+                            >+91 95134 46257</a>
+                        </p>
+                        <p style="margin-top: 1rem; color: var(--primary-light); font-weight: 600">
+                            Mon - Sat: 10:00 AM - 6:30 PM
+                        </p>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>
+                        &copy; 2026 TNBF(Tamil Nadu Business Finance). All
+                        rights reserved.
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <a href="/apply-now" class="sticky-apply">Apply Now</a>
+
+        <script src="../../assets/js/main.js"></script>
+        <script src="../../assets/js/chatbot.js"></script>
+        <script src="../../assets/js/advanced-features.js"></script>
+        <script>
+            const normalizeKeyword = (value) => value.trim().replace(/\s+/g, " ");
+            const toTitleCase = (value) =>
+                value
+                    .split(" ")
+                    .map((w) => (w ? w.charAt(0).toUpperCase() + w.slice(1) : w))
+                    .join(" ");
+
+            const parseKeywordsText = (text) => {
+                const lines = String(text)
+                    .split(/\r?\n/)
+                    .map((l) => l.trim())
+                    .filter(Boolean)
+                    .filter((l) => !/recnet searches|add all as blogs/i.test(l))
+                    .map(normalizeKeyword);
+
+                const seen = new Set();
+                const unique = [];
+                for (const line of lines) {
+                    const key = line.toLowerCase();
+                    if (seen.has(key)) continue;
+                    seen.add(key);
+                    unique.push(line);
+                }
+                unique.sort((a, b) => a.localeCompare(b));
+                return unique;
+            };
+
+            let keywords = [];
+            let keywordsAll = [];
+            let keywordsRelevant = [];
+            const listEl = document.getElementById("keyword-list");
+            const searchEl = document.getElementById("keyword-search");
+            const countEl = document.getElementById("keyword-count");
+            const articleEl = document.getElementById("keyword-article");
+            const showAllEl = document.getElementById("show-all-keywords");
+
+            const isLoanRelatedForTNBF = (keyword) => {
+                const k = keyword.toLowerCase();
+
+                const excluded = [
+                    "student",
+                    "study",
+                    "mba",
+                    "abroad",
+                    "daca",
+                    "international student",
+                    "car",
+                    "auto",
+                    "vehicle",
+                    "bike",
+                    "motorcycle",
+                    "home",
+                    "housing",
+                    "property",
+                    "land",
+                    "construction",
+                    "stock",
+                    "shares",
+                    "gold",
+                ];
+                if (excluded.some((x) => k.includes(x))) return false;
+
+                const includeStrong = [
+                    "tnbf",
+                    "tamil nadu business finance",
+                    "business",
+                    "working capital",
+                    "cheque",
+                    "private finance",
+                    "money lending",
+                    "private lender",
+                    "funding",
+                    "msme",
+                    "startup",
+                    "unsecured",
+                ];
+                return includeStrong.some((x) => k.includes(x));
+            };
+
+            const renderArticle = (keyword) => {
+                const safe = keyword.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+                const title = toTitleCase(keyword);
+                articleEl.innerHTML = `
+                    <div style="margin-bottom: 1.25rem">
+                        <p style="color: var(--primary-color); font-weight: 700; margin-bottom: 0.5rem">Keyword Blog</p>
+                        <h2 style="margin-bottom: 0.5rem; line-height: 1.2">${title}</h2>
+                        <p style="color: var(--text-secondary); margin: 0">Topic: <span style="color: var(--text-primary); font-weight: 700">${safe}</span></p>
+                    </div>
+
+                    <div style="background: var(--background-light); padding: var(--spacing-lg); border-radius: var(--radius-lg); border-left: 4px solid var(--primary-color); margin-bottom: 1.25rem">
+                        <p style="margin: 0; color: var(--text-primary); line-height: 1.8">
+                            This page is a quick guide around the search term <strong>${safe}</strong>. Use it to understand typical requirements, risks, and next steps.
+                        </p>
+                    </div>
+
+                    <section style="margin-bottom: 1.25rem">
+                        <h3 style="margin-bottom: 0.75rem">What it usually means</h3>
+                        <p style="color: var(--text-secondary); line-height: 1.9; margin: 0">
+                            People search for <strong style="color: var(--text-primary)">${safe}</strong> when they want faster funding options, alternatives to banks, or specialized loans. The exact eligibility, pricing, and documentation depend on the lender and product.
+                        </p>
+                    </section>
+
+                    <section style="margin-bottom: 1.25rem">
+                        <h3 style="margin-bottom: 0.75rem">Checklist before you apply</h3>
+                        <ul style="color: var(--text-secondary); line-height: 2; padding-left: 1.25rem; margin: 0">
+                            <li>Confirm the lender is legitimate and regulated (where applicable).</li>
+                            <li>Compare total cost (interest, processing fee, prepayment, late charges).</li>
+                            <li>Check required documents (KYC, income, bank statements, business proofs).</li>
+                            <li>Understand repayment schedule and penalties.</li>
+                        </ul>
+                    </section>
+
+                    <section style="margin-bottom: 1.5rem">
+                        <h3 style="margin-bottom: 0.75rem">TNBF note</h3>
+                        <p style="color: var(--text-secondary); line-height: 1.9; margin: 0">
+                            TNBF(Tamil Nadu Business Finance) focuses on business finance. If you need business funding, you can apply online. For other loan types (for example, student loans), please consult an appropriate authorized lender.
+                        </p>
+                    </section>
+
+                    <div style="display: flex; gap: 0.75rem; flex-wrap: wrap">
+                        <a href="/apply-now" class="btn" style="background: var(--primary-color); color: white; padding: 0.85rem 1.25rem">Apply for Business Loan</a>
+                        <a href="/eligibility" class="btn" style="background: #e2e8f0; color: var(--text-primary); padding: 0.85rem 1.25rem">Check Eligibility</a>
+                    </div>
+                `;
+            };
+
+            const updateSelection = (keyword) => {
+                if (!keyword) return;
+                const url = new URL(window.location.href);
+                url.searchParams.set("q", keyword);
+                window.history.replaceState({}, "", url);
+                renderArticle(keyword);
+                const items = listEl.querySelectorAll("a[data-keyword]");
+                for (const a of items) {
+                    a.style.background = a.dataset.keyword === keyword ? "rgba(0, 51, 102, 0.08)" : "transparent";
+                }
+            };
+
+            const renderList = (filterValue) => {
+                const q = (filterValue || "").trim().toLowerCase();
+                const filtered = q
+                    ? keywords.filter((k) => k.toLowerCase().includes(q))
+                    : keywords;
+
+                countEl.textContent = String(filtered.length);
+
+                listEl.innerHTML = filtered
+                    .slice(0, 6000)
+                    .map((k) => {
+                        const label = k.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+                        return `
+                            <a
+                                href="?q=${encodeURIComponent(k)}"
+                                data-keyword="${k.replace(/\"/g, "&quot;")}" 
+                                style="display: block; padding: 0.75rem 0.85rem; border-radius: 12px; color: var(--text-primary); text-decoration: none; border: 1px solid #e2e8f0; margin-bottom: 0.6rem"
+                            >${label}</a>
+                        `;
+                    })
+                    .join("");
+
+                const anchors = listEl.querySelectorAll("a[data-keyword]");
+                for (const a of anchors) {
+                    a.addEventListener("click", (e) => {
+                        e.preventDefault();
+                        updateSelection(a.dataset.keyword);
+                    });
+                }
+            };
+
+            const init = async () => {
+                try {
+                    const res = await fetch("./keywords.txt", { cache: "no-store" });
+                    const text = await res.text();
+                    keywordsAll = parseKeywordsText(text);
+                    keywordsRelevant = keywordsAll.filter(isLoanRelatedForTNBF);
+                    keywords = keywordsRelevant;
+                    renderList("");
+                    searchEl.addEventListener("input", (e) => {
+                        renderList(e.target.value);
+                    });
+
+                    showAllEl.addEventListener("change", () => {
+                        keywords = showAllEl.checked ? keywordsAll : keywordsRelevant;
+                        renderList(searchEl.value);
+                    });
+
+                    const initial = new URLSearchParams(window.location.search).get("q");
+                    if (initial) {
+                        updateSelection(initial);
+                    }
+                } catch (err) {
+                    countEl.textContent = "0";
+                    listEl.innerHTML = `<p style="color: var(--text-secondary); margin: 0">Unable to load keywords.</p>`;
+                }
+            };
+
+            init();
+        </script>
+    </body>
+</html>

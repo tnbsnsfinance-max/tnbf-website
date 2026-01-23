@@ -13,6 +13,57 @@ document.addEventListener("DOMContentLoaded", function () {
             offset: 100,
         });
     }
+
+    const navs = document.querySelectorAll("nav");
+    for (const nav of navs) {
+        const links = nav.querySelector(".nav-links");
+        if (!links) continue;
+        if (nav.querySelector(".nav-toggle")) continue;
+
+        const toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "nav-toggle";
+        toggle.setAttribute("aria-label", "Open menu");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.innerHTML = `
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M4 7H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M4 12H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M4 17H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        `;
+
+        nav.insertBefore(toggle, links);
+
+        const closeMenu = () => {
+            links.classList.remove("open");
+            toggle.setAttribute("aria-expanded", "false");
+        };
+
+        toggle.addEventListener("click", () => {
+            const isOpen = links.classList.toggle("open");
+            toggle.setAttribute("aria-expanded", String(isOpen));
+        });
+
+        links.querySelectorAll("a").forEach((a) => {
+            a.addEventListener("click", () => {
+                if (window.matchMedia("(max-width: 768px)").matches) {
+                    closeMenu();
+                }
+            });
+        });
+
+        document.addEventListener("click", (e) => {
+            if (!links.classList.contains("open")) return;
+            if (!nav.contains(e.target)) closeMenu();
+        });
+
+        window.addEventListener("resize", () => {
+            if (!window.matchMedia("(max-width: 768px)").matches) {
+                closeMenu();
+            }
+        });
+    }
 });
 
 // ============================================
@@ -81,11 +132,8 @@ document.addEventListener("DOMContentLoaded", function () {
                         <span>📞 95134 46257</span>
                     </div>
                     
-                    <form id="quickLeadForm" action="https://formsubmit.co/tnbsns.finance@gmail.com" method="POST">
-                        <input type="hidden" name="_subject" value="New Quick Lead from TNBF Website">
-                        <input type="hidden" name="_next" value="https://tnbf.in/pages/thanks.html">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_template" value="table">
+                    <form id="quickLeadForm" action="/api/quick-lead" method="POST">
+                        <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden" aria-hidden="true">
                         
                         <div class="form-group">
                             <label for="popup-name">Full Name *</label>
@@ -241,6 +289,59 @@ window.addEventListener("scroll", function () {
     lastScroll = currentScroll;
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const navs = document.querySelectorAll("nav");
+    for (const nav of navs) {
+        const links = nav.querySelector(".nav-links");
+        if (!links) continue;
+        if (nav.querySelector(".nav-toggle")) continue;
+
+        const toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "nav-toggle";
+        toggle.setAttribute("aria-label", "Open menu");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.innerHTML = `
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M4 7H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M4 12H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M4 17H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        `;
+
+        nav.insertBefore(toggle, links);
+
+        const closeMenu = () => {
+            links.classList.remove("open");
+            toggle.setAttribute("aria-expanded", "false");
+        };
+
+        toggle.addEventListener("click", () => {
+            const isOpen = links.classList.toggle("open");
+            toggle.setAttribute("aria-expanded", String(isOpen));
+        });
+
+        links.querySelectorAll("a").forEach((a) => {
+            a.addEventListener("click", () => {
+                if (window.matchMedia("(max-width: 768px)").matches) {
+                    closeMenu();
+                }
+            });
+        });
+
+        document.addEventListener("click", (e) => {
+            if (!links.classList.contains("open")) return;
+            if (!nav.contains(e.target)) closeMenu();
+        });
+
+        window.addEventListener("resize", () => {
+            if (!window.matchMedia("(max-width: 768px)").matches) {
+                closeMenu();
+            }
+        });
+    }
+});
+
 // ============================================
 // FORM VALIDATION
 // ============================================
@@ -250,21 +351,18 @@ document.addEventListener("submit", function (e) {
     const form = e.target;
     if (form.tagName !== "FORM") return;
 
-    console.log("Form submission detected:", form.id || "unnamed form");
-
     // 1. Check if running locally via file:// protocol
     if (window.location.protocol === "file:") {
         e.preventDefault();
         alert(
-            "❌ Form Submission Error:\n\nFormSubmit.co (the email service) does not work when opening HTML files directly from your computer (file://).\n\nTo test the form, you MUST use a local server:\n1. Open this project in VS Code.\n2. Right-click index.html and select 'Open with Live Server'.\n\nOnce hosted or served via Live Server, the form will work perfectly!",
+            "❌ Form Submission Error:\n\nForms cannot submit when opening HTML files directly from your computer (file://).\n\nTo test the form, you MUST use a local server (VS Code Live Server) or deploy it.",
         );
         return false;
     }
 
     // 2. Turnover Validation (Minimum 15L requirement)
     const turnoverSelect = form.querySelector('[name="Monthly Turnover"]') ||
-        form.querySelector('[name="monthly_transaction"]') ||
-        form.querySelector('[name="loan_amount"]');
+        form.querySelector('[name="monthly_transaction"]');
 
     if (turnoverSelect && turnoverSelect.value) {
         const val = turnoverSelect.value.toLowerCase();
@@ -278,6 +376,54 @@ document.addEventListener("submit", function (e) {
             );
             return false;
         }
+    }
+
+    const actionUrl = new URL(form.getAttribute("action") || "", window.location.href);
+    if (actionUrl.origin === window.location.origin && actionUrl.pathname.startsWith("/api/")) {
+        e.preventDefault();
+
+        const submitButton = form.querySelector('button[type="submit"], input[type="submit"]');
+        const originalLabel = submitButton
+            ? (submitButton.tagName === "INPUT" ? submitButton.value : submitButton.textContent)
+            : "";
+        if (submitButton) {
+            submitButton.disabled = true;
+            if (submitButton.tagName === "INPUT") submitButton.value = "Submitting...";
+            if (submitButton.tagName === "BUTTON") submitButton.textContent = "Submitting...";
+        }
+
+        const formData = new FormData(form);
+        const body = new URLSearchParams();
+        for (const [key, value] of formData.entries()) {
+            body.append(key, String(value));
+        }
+
+        fetch(actionUrl.toString(), {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: body.toString(),
+        })
+            .then(async (resp) => {
+                if (!resp.ok) {
+                    let msg = "Submission failed. Please try again.";
+                    try {
+                        const data = await resp.json();
+                        if (data && data.error) msg = data.error;
+                    } catch {}
+                    throw new Error(msg);
+                }
+                window.location.href = "/thanks.html";
+            })
+            .catch((err) => {
+                alert(err && err.message ? err.message : "Submission failed. Please try again.");
+            })
+            .finally(() => {
+                if (submitButton) {
+                    submitButton.disabled = false;
+                    if (submitButton.tagName === "INPUT") submitButton.value = originalLabel;
+                    if (submitButton.tagName === "BUTTON") submitButton.textContent = originalLabel;
+                }
+            });
     }
 });
 
@@ -315,10 +461,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     <h2 style="color: var(--primary-color); margin-bottom: 0.5rem; text-align: center;">Quick Loan Application</h2>
                     <p style="color: var(--text-secondary); margin-bottom: 1.5rem; text-align: center;">Get approved in 24-48 hours • No collateral needed</p>
                     
-                    <form id="applyForm" action="https://formsubmit.co/tnbsns.finance@gmail.com" method="POST">
-                        <input type="hidden" name="_subject" value="🔥 New Business Loan Application - TNBF">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_template" value="table">
+                    <form id="applyForm" action="/api/contact" method="POST">
+                        <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden" aria-hidden="true">
                         
                         <div style="display: grid; grid-template-columns: 1fr; gap: 1rem;">
                             <div class="form-group" style="margin-bottom: 0;">

@@ -42,6 +42,7 @@
                     <li>
                         <a href="/testimonials">Testimonials</a>
                     </li>
+                    <li><a href="/blog">Blog</a></li>
                 </ul>
             </nav>
         </header>
@@ -72,52 +73,12 @@
                         </p>
                     </div>
 
-                    <script>
-                        function validateForm(e) {
-                            if (window.location.protocol === "file:") {
-                                e.preventDefault();
-                                alert(
-                                    "❌ LOCAL TESTING DETECTED\n\nFormSubmit.co does not work with file:// URLs.\n\nPlease open this project using VS Code 'Live Server' to test the form.",
-                                );
-                                return false;
-                            }
-                            
-                            // Visual feedback
-                            const btn = document.querySelector('button[type="submit"]');
-                            if(btn) {
-                                btn.innerHTML = "Submitting... ⏳";
-                                btn.style.opacity = "0.7";
-                                btn.style.cursor = "not-allowed";
-                            }
-                            return true;
-                        }
-
-                        // Set dynamic redirect URL to handle localhost and production automatically
-                        window.onload = function() {
-                            const nextInput = document.querySelector('input[name="_next"]');
-                            if(nextInput) {
-                                nextInput.value = window.location.origin + "/thanks.html";
-                            }
-                        };
-                    </script>
                     <form
-                        action="https://formsubmit.co/tnbsns.finance@gmail.com"
+                        action="/api/contact"
                         method="POST"
                         id="mainApplyForm"
-                        onsubmit="return validateForm(event)"
                     >
-                        <input
-                            type="hidden"
-                            name="_subject"
-                            value="🚀 New Detailed Loan Application - TNBF(Tamil Nadu Business Finance)"
-                        >
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_template" value="table">
-                        <input
-                            type="hidden"
-                            name="_next"
-                            value="https://tnbf.in/pages/thanks.html"
-                        >
+                        <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden" aria-hidden="true">
 
                         <div class="grid grid-2" style="gap: var(--spacing-lg)">
                             <div class="form-group">

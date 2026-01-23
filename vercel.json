@@ -6,9 +6,6 @@
   "installCommand": "npm ci",
   "buildCommand": "npm run build",
   "outputDirectory": "public",
-  "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api" }
-  ],
   "redirects": [
     { "source": "/pages/home", "destination": "/", "permanent": true },
     { "source": "/pages/home/index.html", "destination": "/", "permanent": true },
